@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'posts.apps.PostsConfig',
     'bootstrap4',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
