@@ -4,38 +4,56 @@
       <span class="navbar-toggler-icon bg-white"></span>
     </button>
   
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        
-                
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="font-size:20px">
-              Category
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-       
-              <a class="dropdown-item" href="">Home</a>
-              <div class="dropdown-divider"></div>
-
-            
-           
-          </div>
+    <div class="col-sm-8 col-md-8 d-flex justify-content-end">
+        {% if user.is_authenticated %}
+        <ul>
+            <li class="nav-item list-unstyled">
+            <a class="nav-link btn btn-block text-white success-color-dark" href="">New Hood </a>
           </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"style="font-size:20px" >
-              Locations
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      </ul>
+        <ul>
+          <li class="dropdown list-unstyled text-white">
+              <a class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fas fa-user" style="color: white;"></i> My Account </a>
+            <ul class="dropdown-menu dropdown-default" role="menu">
+              <li>
+                  <a class="dropdown-item" href="{%url 'profile' user.username%}">Profile</a>
+                </li>
               
-              <a class="dropdown-item" href=""></a>
-              <div class="dropdown-divider"></div>
-
-            
-          
-          </div>
+              <li>
+                <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+              </li>
+            </ul>
           </li>
         </ul>
+        <ul>
+          <li class="dropdown list-unstyled text-white">
+              <a class="nav-link dropdown-toggle text-white" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              <i class="fa-brands fa-quinscape" style="color: white;"></i> APIs </a>
+            <ul class="dropdown-menu dropdown-default" role="menu">
+              <li>
+                  <a class="dropdown-item" href="api/profile/">Profile API</a>
+                </li>
+              
+              <li>
+                <a class="dropdown-item" href="api/project/">Projects API</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="">Users API</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        {% else %}
+        <li class="list-unstyled">
+            <a class='btn btn-sm btn-default font-weight-bold text-white' href="{% url 'login' %}" style="font-size: 15px;">Login</a>
+            <a class='btn btn-sm btn-default font-weight-bold text-white' href="{% url 'signup' %}"style="font-size: 15px;">Register</a>
+        </li>
+
+        {% endif %}
+  </div>
            <!-- Adding a search form  -->
            <form class="form-inline my-2 my-lg-0 " action="">
             <input class="form-control mr-sm-2" type="search" placeholder="Search by category" name="photo" aria-label="Search">
