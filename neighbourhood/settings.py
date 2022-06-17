@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -42,6 +45,7 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'bootstrap4',
     'crispy_forms',
+    'cloudinary',
 ]
 
 MIDDLEWARE = [
@@ -80,10 +84,13 @@ WSGI_APPLICATION = 'neighbourhood.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'neighbourhood',
+        'USER': 'raine',
+        'PASSWORD': 'gift1234'
     }
 }
+
 
 
 # Password validation
@@ -129,3 +136,12 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+cloudinary.config(
+    cloud_name = "dcfb3gqzg",
+    api_key ="825938427599163",
+    api_secret ="KFYIt-ZMSDBPjQWaBqNhcNnXVLc"
+)
+CRISPY_ALLOWED_TEMPLATES_PACKS = 'bootstrap4'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
