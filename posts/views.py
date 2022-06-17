@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from django.urls import reverse
+from .models import *
+from .forms import *
 
 from .forms import SignUpForm, LogInForm
 
@@ -46,3 +48,29 @@ def log_in(request):
 def log_out(request):
     logout(request)
     return redirect(reverse('login'))
+
+def profile(request, username):
+  
+    
+   return render(request, 'profile.html')
+
+def editProfile(request,username):
+    user = CustomUser.objects.get(username=username)
+    if request.method == "POST":
+        u_form = UserUpdateForm(request.POST,instance=request.user)
+        p_form = ProfileUpdateForm(request.POST,request.FILES,instance=request.user.profile)
+
+        if u_form.is_valid() and p_form.is_valid():
+            u_form.save()
+            p_form.save()
+            
+            return redirect('profile',username=username)
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+        p_form = ProfileUpdateForm(instance=request.user.profile)
+
+    context={
+        'u_form':u_form,
+        'p_form':p_form
+    }
+    return render(request, 'edit_profile.html', context)

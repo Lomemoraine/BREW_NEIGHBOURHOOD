@@ -1,6 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
+from phonenumber_field.modelfields import PhoneNumberField
+from cloudinary.models import CloudinaryField
 
 
 class CustomUserManager(BaseUserManager):
@@ -46,3 +48,19 @@ class CustomUser(AbstractUser):
 
     def __str__(self):
         return self.username
+    
+class Profile(models.Model):
+    user = models.OneToOneField(CustomUser,null=True,on_delete=models.CASCADE)
+    prof_pic = CloudinaryField('images', default='http://res.cloudinary.com/dim8pysls/image/upload/v1639001486/x3mgnqmbi73lten4ewzv.png')
+    bio = models.TextField(blank=True, max_length=255)
+    f_name = models.TextField(blank=True, max_length=255)
+    l_name = models.CharField(blank=True,max_length=50)
+    phone = PhoneNumberField(blank=True)
+    
+
+    def __str__(self):
+        return self.f_name
+
+    def save_profile(self):
+        '''Add Profile to database'''
+        self.save()
