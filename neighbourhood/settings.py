@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'posts.apps.PostsConfig',
     'bootstrap4',
     'cloudinary',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +145,4 @@ cloudinary.config(
 CRISPY_ALLOWED_TEMPLATES_PACKS = 'bootstrap4'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+AUTH_USER_MODEL = 'posts.CustomUser'
