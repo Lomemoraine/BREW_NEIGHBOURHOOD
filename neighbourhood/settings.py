@@ -46,7 +46,6 @@ INSTALLED_APPS = [
     'bootstrap4',
     'crispy_forms',
     'cloudinary',
-    'crispy_forms',
     'phonenumber_field',
     
     
