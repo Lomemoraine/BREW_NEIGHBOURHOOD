@@ -62,3 +62,8 @@ class Business(models.Model):
 
     def delete_business(self):
         self.delete()
+        
+    @classmethod
+    def hood_hustle(cls, id):
+        hoodhustles = Business.objects.filter(neighbourhood = id)
+        return hoodhustles
