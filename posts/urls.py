@@ -6,8 +6,8 @@ from django.conf import settings
 from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
-  path('', views.home, name='home'),
-  path('accounts/register/', views.register, name='register'),
+    path('', views.home, name='home'),
+    path('accounts/register/', views.register, name='register'),
     path('profile/', views.profile, name='profile'),
     path('update_profile/', user_views.update_profile, name='update_profile'),
     path('new_hood/', views.new_hood, name='new_hood'),
@@ -15,7 +15,11 @@ urlpatterns = [
     path('edithood/', views.edit_hood, name='edithood'),
     path('businesses/<id>', views.businesses, name='hoodbusiness'),
     path('post', views.post, name='post'),
+    path('edithood/', views.edit_hood, name='edithood'),
     path('hoodupdates/<id>', views.posthood, name='hoodupdates'),
+    path('joinhood/<id>', views.joinhood, name='joinhood'),
+    path('leavehood/<id>', views.leavehood, name='leavehood'),
+    path('singlehood/<id>', views.singlehood, name='singlehood'),
 ]
 # urlpatterns = format_suffix_patterns(urlpatterns)
 if settings.DEBUG:
