@@ -161,4 +161,19 @@ def newbiz(request):
 def hoodupdates(request, id):
     post = Post.hood_updates(id=id)
     return render(request, 'hoodupdates.html', {'post': post})
+@login_required(login_url='login/')
+def post(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewPostForm(request.POST, request.FILES)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.user = current_user
 
+            post.save()
+
+        return redirect('hood')
+
+    else:
+        form = NewPostForm()
+    return render(request, 'post.html', {"form": form})
