@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="container_fluid ">
+        <div class="row">
+        <div class="col-md-4 "></div>
+        <div class="col-md-4 container1">
+            <div class="card mt-2" style="background-color: #b2dfdb;">
+
+                <!-- FORM HERE -->
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class="border-bottom mb-4 text-center" style="font-family: 'Henny Penny', cursive;">Profile Update</legend>
+            {{ u_form|crispy }}
+            {{ p_form|crispy }}
+        </fieldset>
+        <div class="form-group text-center" id="signup-button">
+            <button class="btn-success button2">Update</button>
+        </div>
+
+      </form>
+       
+    </div>
+    
+        </div>
+  
+    <div class="col-md-4 "></div>
+    </div>
+</div>
+    
+{% endblock content %}
