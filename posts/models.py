@@ -75,3 +75,6 @@ class Post(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE,default = '')
     date = models.DateField(auto_now_add=True)
     neighbourhood = models.ForeignKey("Neighbourhood",on_delete=models.CASCADE, default='', null=True, blank=True)
+    
+    def __str__(self):
+        return f'{self.title} Post'
