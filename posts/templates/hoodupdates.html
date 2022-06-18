@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <br>
+    <h2 class="text-center" style="font-family: 'Kanit', sans-serif;">Updates</h2>
+    <div class="row">
+        {% for post in post %}
+        <div class=" col-sm-12 col-lg-4 mb-5">
+            <div class="card">
+                <div class="mt-3 ml-3 mr-3">
+                    <img width="120%" height="120%" src="{{post.user.profile.profile_pic.url }}" alt=""
+                        style="border-radius: 50%; width:30px; height:30px; ">
+                  By:  {{post.user.username}}
+                    <hr>
+                    <p><b>Title:</b> {{post.title}}</p>
+                    <p><b>Post:</b> {{post.text}}</p>
+                    <p><b>Hood:</b> {{post.neighbourhood}}</p>
+                    <p><b>Date Posted:</b> {{post.date}}</p>
+                    
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{%endblock%}

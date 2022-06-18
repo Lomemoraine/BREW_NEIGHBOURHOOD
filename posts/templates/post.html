@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+
+{%block content%}
+
+<div class="container">
+    <h3 class="text-center" style="font-family: 'Kanit', sans-serif;; padding-top:40px;">Add Post</h3>
+    <div class="col-sm-12 col-lg-6 m-auto card" style="background-color: beige;">
+        <form action="{%url 'post'%}" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+
+            {% bootstrap_form form%}
+            <input type="submit" class="btn default-color btn-lg btn-center" value="Post"><br><br>
+        </form>
+    </div>
+    <br>
+</div>
+
+
+
+{% endblock %}

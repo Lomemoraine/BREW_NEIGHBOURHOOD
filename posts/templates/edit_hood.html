@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% load bootstrap4 %}
+
+
+{%block content%}
+<div style ="margin-top: px; ">
+<div class="container">
+    <h3 class="text-center" style="font-family: 'Lobster Two', cursive;">Add a neighbourhood</h3>
+    <div class="col-sm-6 m-auto card" style="background-color: beige;">
+        <form action="{%url 'edithood'%}" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+
+            {% bootstrap_form form%}
+            <input type="submit" class="btn btn-info btn-lg btn-center" value="Post">
+        </form>
+    </div>
+</div>
+</div>
+
+
+{% endblock %}
+
+
