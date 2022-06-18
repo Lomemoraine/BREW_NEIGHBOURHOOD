@@ -37,3 +37,6 @@ class Neighbourhood(models.Model):
     hood_logo = models.ImageField( upload_to='images/', blank ='true',default='')
     emergency_contact=models.CharField(max_length=100,null=True, blank=True)
     occupants_count = models.IntegerField(null  = True ,blank = True)
+    
+    def __str__(self):
+        return f'{self.name} neighbourhood'
