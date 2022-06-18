@@ -53,3 +53,6 @@ class Business(models.Model):
     email = models.CharField(max_length=100, default = '')
     neighbourhood = models.ForeignKey("Neighbourhood",on_delete=models.CASCADE, default='', null=True, blank=True)
     description = models.TextField( default = '')
+    
+    def __str__(self):
+        return f'{self.name} business'
