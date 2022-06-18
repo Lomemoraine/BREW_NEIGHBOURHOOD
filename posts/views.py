@@ -120,7 +120,7 @@ def edit_hood(request):
 
 def joinhood(request, id):
     hood = get_object_or_404(Neighbourhood, id=id)
-    request. = hood
+    request.user.profile.neighbourhood = hood
     request.user.profile.save()
     return redirect('hood')
 
@@ -159,6 +159,6 @@ def newbiz(request):
 
 @login_required(login_url='login/')
 def hoodupdates(request, id):
-    post = Post.hood_post(id=id)
+    post = Post.hood_updates(id=id)
     return render(request, 'hoodupdates.html', {'post': post})
 
