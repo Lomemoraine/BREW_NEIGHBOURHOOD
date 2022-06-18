@@ -127,3 +127,8 @@ def leavehood(request, id):
 def singlehood(request, id):
     hood = Neighbourhood.objects.get(id=id)
     return render(request, 'singlehood.html', {'hood':hood})
+
+@login_required(login_url='/accounts/login/')
+def businesses(request, id):
+    business = Business. hood_hustle(id=id)
+    return render(request, 'business.html', {'business': business})

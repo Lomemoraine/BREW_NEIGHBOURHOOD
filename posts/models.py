@@ -89,3 +89,4 @@ class Post(models.Model):
     def hood_updates(cls, id):
         hoodupdates = Post.objects.filter(neighbourhood = id)
         return hoodupdates
+    
