@@ -132,3 +132,20 @@ def singlehood(request, id):
 def businesses(request, id):
     business = Business. hood_hustle(id=id)
     return render(request, 'business.html', {'business': business})
+
+@login_required(login_url='/accounts/login/')
+def newbiz(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewBizForm(request.POST, request.FILES)
+        if form.is_valid():
+            business = form.save(commit=False)
+            business.user = current_user
+
+            business.save()
+
+        return redirect('hood')
+
+    else:
+        form = NewBizForm()
+    return render(request, 'newbiz.html', {"form": form})
