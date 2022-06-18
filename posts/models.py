@@ -57,6 +57,7 @@ class Profile(models.Model):
     f_name = models.CharField(blank=True, max_length=255)
     l_name = models.CharField(blank=True,max_length=50)
     phone = PhoneNumberField(blank=True)
+    neighbourhood = models.ForeignKey("Neighbourhood",on_delete=models.CASCADE, default='', null=True, blank=True)
     
 
     def __str__(self):
