@@ -1,4 +1,5 @@
 
+
 from django.shortcuts import render, redirect,get_object_or_404
 from django.contrib.auth import login, authenticate, logout
 from django.urls import reverse
@@ -9,9 +10,12 @@ from .models import *
 from .forms import *
 
 
+
+
 # Create your views here.
 def home(request):
     
+
     return render(request, 'index.html')
 
 
@@ -177,3 +181,4 @@ def post(request):
     else:
         form = NewPostForm()
     return render(request, 'post.html', {"form": form})
+
