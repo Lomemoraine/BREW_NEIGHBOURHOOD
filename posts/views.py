@@ -149,3 +149,9 @@ def newbiz(request):
     else:
         form = NewBizForm()
     return render(request, 'newbiz.html', {"form": form})
+
+@login_required(login_url='/accounts/login/')
+def hoodupdates(request, id):
+    post = Post.hood_post(id=id)
+    return render(request, 'hoodupdates.html', {'post': post})
+
