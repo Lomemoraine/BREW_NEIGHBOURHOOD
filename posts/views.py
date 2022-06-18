@@ -78,3 +78,20 @@ def update_profile(request):
 def hood(request):
     hoods = Neighbourhood.objects.all()
     return render(request, 'neighbourhoods.html', {"hoods": hoods})
+
+@login_required(login_url='/accounts/login/')
+def new_hood(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = NewHoodForm(request.POST, request.FILES)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.admin = current_user.profile
+
+            image.save()
+
+        return redirect('hood')
+
+    else:
+        form = NewHoodForm()
+    return render(request, 'new_hood.html', {"form": form})
