@@ -95,3 +95,18 @@ def new_hood(request):
     else:
         form = NewHoodForm()
     return render(request, 'new_hood.html', {"form": form})
+
+def edit_hood(request):
+    current_user = request.user
+    if request.method == 'POST':
+        form = EditHoodForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            image = form.save(commit=False)
+            image.admin = current_user.profile
+
+            image.save()
+        return redirect('hood')
+
+    else:
+        form = EditHoodForm()
+    return render(request, 'edit_hood.html', {'form': form})
