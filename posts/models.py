@@ -84,3 +84,8 @@ class Post(models.Model):
 
     def delete_post(self):
         self.delete()
+        
+    @classmethod
+    def hood_updates(cls, id):
+        hoodupdates = Post.objects.filter(neighbourhood = id)
+        return hoodupdates
