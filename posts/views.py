@@ -110,3 +110,9 @@ def edit_hood(request):
     else:
         form = EditHoodForm()
     return render(request, 'edit_hood.html', {'form': form})
+
+def joinhood(request, id):
+    hood = get_object_or_404(Neighbourhood, id=id)
+    request.user.profile.neighbourhood = hood
+    request.user.profile.save()
+    return redirect('hood')
