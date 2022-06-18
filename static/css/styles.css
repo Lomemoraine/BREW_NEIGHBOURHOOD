@@ -6,3 +6,10 @@ h1
 {
   color: green;
 }
+
+#indexContainer{
+  background-image: url("https://unsplash.com/photos/LZkbXfzJK4M");
+  background-position: center;
+  background-repeat: no-repeat;
+
+}
