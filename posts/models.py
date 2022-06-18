@@ -56,3 +56,9 @@ class Business(models.Model):
     
     def __str__(self):
         return f'{self.name} business'
+    
+    def save_business(self):
+            self.save()
+
+    def delete_business(self):
+        self.delete()
