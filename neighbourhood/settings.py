@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from decouple import config, Csv
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
@@ -24,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-=4(8yc=ge!q2!ck5iin!oth@exyb7)+xijl^5tlk2ysegx$lm*'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -41,6 +42,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'posts',
     'rest_framework',
     'posts.apps.PostsConfig',
     'bootstrap4',
@@ -85,9 +87,9 @@ WSGI_APPLICATION = 'neighbourhood.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'neighbourhood',
-        'USER': 'raine',
-        'PASSWORD': 'gift1234'
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
     }
 }
 
@@ -138,9 +140,9 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 cloudinary.config(
-    cloud_name = "dcfb3gqzg",
-    api_key ="825938427599163",
-    api_secret ="KFYIt-ZMSDBPjQWaBqNhcNnXVLc"
+    cloud_name =config('CLOUD_NAME'),
+    api_key =config('API_KEY'),
+    api_secret =config('API_SECRET')
 )
 CRISPY_ALLOWED_TEMPLATES_PACKS = 'bootstrap4'
 
