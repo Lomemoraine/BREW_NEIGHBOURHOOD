@@ -1,4 +1,12 @@
 {%extends 'base.html'%}
 {% block content %} 
 {{ block.super}}
+
+<div class="container-fluid" style="background-image: url('https://images.unsplash.com/photo-1449157291145-7efd050a4d0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60');  background-repeat: no-repeat; background-size: cover; height: 100vh;  background-position: center; text-align:center; overflow-x:hidden;" >
+    <h1 style="font-size:100px; margin-top:150px; color:#2BBBAD; font-family: 'Henny Penny', cursive; " >The<i class="fas fa-home"></i>ood</h1>
+    <a href="{%url 'hood'%}"  style="margin-top:50px; " class="btn default-color btn-small">View Hood</a>
+
+</div>
+
+
 {% endblock %}
