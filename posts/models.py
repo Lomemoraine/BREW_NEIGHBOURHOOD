@@ -13,3 +13,6 @@ class Profile(models.Model):
     location = models.CharField(max_length=100,blank =True)
     neighbourhood = models.ForeignKey("Neighbourhood",on_delete=models.CASCADE, default='', null=True, blank=True)
     profile_pic = models.ImageField( upload_to='profile/', blank ='true',default='default.png')
+    
+    def __str__(self):
+        return f'{self.user.username} Profile'
