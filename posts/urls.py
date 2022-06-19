@@ -23,6 +23,7 @@ urlpatterns = [
   path('joinhood/<id>', views.joinhood, name='joinhood'),
   path('leavehood/<id>', views.leavehood, name='leavehood'),
   path('singlehood/<id>', views.singlehood, name='singlehood'),
+  path('search/', views.search_business, name='search'),
 
 ]
 

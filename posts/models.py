@@ -102,6 +102,10 @@ class Business(models.Model):
         self.delete()
         
     @classmethod
+    def search_business(cls, title):
+        return cls.objects.filter(title__icontains=title).all()
+        
+    @classmethod
     def hood_hustle(cls, id):
         hoodhustles = Business.objects.filter(neighbourhood = id)
         return hoodhustles
