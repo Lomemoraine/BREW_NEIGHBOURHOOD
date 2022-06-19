@@ -1,68 +1,101 @@
-## BREW_NEIGHBOURHOOD
-## Description
-A django web application that allows users be in the loop about everything happening in their neighbourhood.From contact information of handy man to meeting announcements or even alerts
-## User Story
-As a user I would like to:
+### Brew Neighborhood
 
-* Sign in with the application to start using.
-* Set up a profile about me and a general location and my neighborhood name.
-* Find a list of different businesses in my neighborhood.
-* Find Contact Information for the health department and Police authorities near my neighborhood.
-* Create Posts that will be visible to everyone in my neighborhood.
-* Change My neighborhood when I decide to move out.
-Only view details of a single neighborhood.
-## Setup and Installations
-* git clone https://github.com/Lomemoraine/BREW_NEIGHBOURHOOD.git
-* Initialize git and add the remote repository
-* git init
-* git remote add origin <your-repository-url>
-* Create virtual environment
+> A web application that allows you to be in the loop about everything happening in your neighborhood. From contact information of different handyman to meeting announcements or even alerts.
 
-  $ python3.9 -m virtualenv virtual
-* Activate the virtual environment
+> Live demo [ ]
 
-  $ source virtual/bin/activate
-* Setting up environment variables
+### Project Contributors
 
-Create a .env file and paste paste the following filling where appropriate:
+> Lorraine Chepkemoi
+> Danis Muga
+> Maureen Muriithi
+> Bianca Nyambura
+> Fridah Kitunguu
+> Joylene Kirui
 
-* SECRET_KEY = 'SECRET_KEY'
-* DEBUG=True
-* DB_NAME='<your database name>'
-* DB_USER='<your database name>'
-* DB_PASSWORD='<password to your database>'
-* DB_HOST='127.0.0.1'
-* MODE='dev'
-* ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
-* DISABLE_COLLECTSTATIC=1
-Install dependancies
+### Table of Contents
 
-Install dependancies that will create an environment for the app to run pip 
+- [Screenshots](#screenshots)
+- [Technologies Used](#technologies-used)
+- [User Story](#user-story)
+- [Setup/Requirements](#setup/requirements)
+- [Behavior Driven Development](#test-driven-development)
+- [Test Driven Development](#test-driven-development)
+- [Known Bugs](#known-bugs)
+- [License](#license)
 
-* install -r requirements.txt
 
-Make and run migrations
+#### Screenshots
+Home
+[![homepagehood.jpg](https://i.postimg.cc/C1JHH1by/homepagehood.jpg)](https://postimg.cc/mzzHTTdV)
 
-* python3.9 manage.py check
-* python manage.py makemigrations posts
-* python3.9 manage.py sqlmigrate posts 0001
-* python3.9 manage.py migrate
+#### Technologies Used
 
-Run the app
+- HTML
+- CSS (Bootstrap)
+- Python
+- Django
+- JavaScript
+- Postgres
+- Google fonts
+- Browsers
 
-* python3.9 manage.py runserver
-* Open localhost:8000
+#### User Story
+The user is able to:
+1. Sign in to the application to start using it.
+2. Set up a profile which contains:
+    - My name
+    - My location
+    - My neighborhood name
+3. Find a list of different businesses in my neighborhood.
+4. Find Contact Information for the emergency services
+5. Create Posts that will be visible to everyone in my neighborhood.
+6. Change My neighborhood when I decide to move out.
+7. Only view details of a single neighborhood.
 
-Testing the Application
+#### Setup Requirements 
+- Ensure you have the following installed on your machine
+    - python3.7 or later
+    - django
+    - pip
+    - virtual enviroment
+    - Postgress database
 
-* python manage.py test posts
-## Technology used
-* Python3.9
-* Django 4.0.5
-* Postgresql
-* Boostrap
-* HTML
-* CSS
-## Support and Contact details
-Incase you come across errors, have questions, ideas ,concerns, or want to contribute to the application, feel free to reach me at :@memo_lorraine
+    ## Dependencies
+    All dependencies are listed in the requirements.txt file
+
+    ## Clone
+    git clone https://github.com/Lomemoraine/Awwwards_Clone.git
+    cd BREW_NEIGHBORHOOD_Clone
+    Open in your preferred IDE(Vs Code ,Pycharm,atom)
+
+    ## Running the application
+    - To run the application, open the cloned file in terminal and run the following commands: * python3 manage.py runserver
+
+    ## Make and Run Migrations
+
+    * python3.8 manage.py check
+    * python manage.py makemigrations 
+    * python3.8 manage.py sqlmigrate 
+    * python3.8 manage.py migrate
+
+#### Behavior Driven Developmant
+- The user lands on landing page where they can join a hood.
+- A user can register and login into the apllication.
+- A user can update their profile using the admin dashboard.
+- An authenticated user can post their posts/business for others to view in their neighborhood.
+- An authenticated user can join, exit or change neighorhoods.
+
+
+#### Test Driven Development
+- All the tests can be runned by typing the following command on the terminal $Python3 manage.py test
+
+#### Known Bugs
+
+I have no any known bugs.
+However, we are yet to redirect the businesses and posts to the single hood page.
+
+#### License
+
+This project is open source and available under the [MIT License]
 
