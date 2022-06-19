@@ -120,7 +120,7 @@ def edit_hood(request):
 
 def joinhood(request, id):
     hood = get_object_or_404(Neighbourhood, id=id)
-    request. = hood
+    request.hood
     request.user.profile.save()
     return redirect('hood')
 

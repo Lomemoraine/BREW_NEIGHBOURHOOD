@@ -22,13 +22,13 @@ class ProfileTest(TestCase):
         self.assertEqual(len(all_profiles),0)
 
 class BusinessTestCase(TestCase):
-    self.new_neighborhood= Project(name = 'market',user = 'James',email = 'james@gmail',neighborhood = 'Nyali',descrption='serenity at its best')
+    self.new_neighborhood= Post(name = 'market',user = 'James',email = 'james@gmail',neighborhood = 'Nyali',descrption='serenity at its best')
 
 
     def test_save_image(self):
         self.name.save_name()
         name = Business.objects.all()
-        self.assertEqual(len(pictures),1)
+        self.assertEqual(len(images),1)
 
     def test_delete_image(self):
         self.name.save_image()
@@ -49,7 +49,7 @@ class BusinessTestCase(TestCase):
 
 class NeighbourhoodTestCase(TestCase):
     def setUp(self):
-        self.new_neighborhood= Project(name ='Tudor',location = 'Mombasa',image = 'image.jpg',description = 'lovely hood',user = james,emergency_contact= '911',occupants_count ='8')
+        self.new_neighborhood= Post(name ='Tudor',location = 'Mombasa',image = 'image.jpg',description = 'lovely hood',user = james,emergency_contact= '911',occupants_count ='8')
 
     def test_save_image(self):
         self.image.save_image()
@@ -66,19 +66,19 @@ class NeighbourhoodTestCase(TestCase):
        
         self.image.save_image()
         all_images = Image.get_all_images()
-        self.assertTrue(len(all_pictures) < 1)
+        self.assertTrue(len(all_images) < 1)
 
     def test_get_one_image(self):
         self.pet.save_image()
         one_pic = Image.get_one_image(self.pet.id)
-        self.assertTrue(one_pic.name == self.picture.name)
+        self.assertTrue(one_pic.name == self.image.name)
 
 class PostTestCase(TestCase):
-    self.new_neighborhood= Project(title = 'hood',User = 'James',text = 'serenity at its best',date_created='June,18,2022')
+    self.new_neighborhood= Post(title = 'hood',User = 'James',text = 'serenity at its best',date_created='June,18,2022')
     def test_save_image(self):
         self.name.save_name()
         name = Business.objects.all()
-        self.assertEqual(len(pictures),1)
+        self.assertEqual(len(images),1)
 
     def test_delete_image(self):
         self.name.save_name()
