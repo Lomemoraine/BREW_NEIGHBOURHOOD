@@ -24,8 +24,6 @@
 - [Known Bugs](#known-bugs)
 - [License](#license)
 
-
-
 #### Technologies Used
 
 - HTML
