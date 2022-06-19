@@ -1,4 +1,4 @@
-BREW_NEIGHBOURHOOD
+## BREW_NEIGHBOURHOOD
 ## Description
 A django web application that allows users be in the loop about everything happening in their neighbourhood.From contact information of handy man to meeting announcements or even alerts
 ## User Story
@@ -17,23 +17,29 @@ Only view details of a single neighborhood.
 * git init
 * git remote add origin <your-repository-url>
 * Create virtual environment
+
   $ python3.9 -m virtualenv virtual
 * Activate the virtual environment
+
   $ source virtual/bin/activate
 * Setting up environment variables
+
 Create a .env file and paste paste the following filling where appropriate:
 
-SECRET_KEY = 'SECRET_KEY'
-DEBUG=True
-DB_NAME=''
-DB_USER='<your database name>'
-DB_PASSWORD='<password to your database>'
-DB_HOST='127.0.0.1'
-MODE='dev'
-ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
-DISABLE_COLLECTSTATIC=1
+* SECRET_KEY = 'SECRET_KEY'
+* DEBUG=True
+* DB_NAME=''
+* DB_USER='<your database name>'
+* DB_PASSWORD='<password to your database>'
+* DB_HOST='127.0.0.1'
+* MODE='dev'
+* ALLOWED_HOSTS='.localhost', '.herokuapp.com', '.127.0.0.1'
+* DISABLE_COLLECTSTATIC=1
 Install dependancies
-Install dependancies that will create an environment for the app to run pip install -r requirements.txt
+
+Install dependancies that will create an environment for the app to run pip 
+
+* install -r requirements.txt
 
 Make and run migrations
 
@@ -44,12 +50,12 @@ Make and run migrations
 
 Run the app
 
-python3.9 manage.py runserver
-Open localhost:8000
+* python3.9 manage.py runserver
+* Open localhost:8000
 
 Testing the Application
 
-python manage.py test posts
+* python manage.py test posts
 ## Technology used
 * Python3.9
 * Django 4.0.5
