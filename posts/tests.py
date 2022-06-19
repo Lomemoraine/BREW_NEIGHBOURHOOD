@@ -5,8 +5,8 @@ from django.contrib.auth.models import User
 # Create your tests here.
 class ProfileTest(TestCase):
     def setUp(self):
-        self.James = User(username ='James',email='james@gmail.com')
-        self.James = Profile(user = self.james,user_id=1,bio = 'my hood', email='james@gmail.com',profile_pic = 'image.jpg',location='Mombasa', neighbourhood='Tudor')
+        self.James = User(name ='James',bio='lovely hood')
+        self.James = Profile(user = self.james,user_id=1,bio = 'lovely hood', prof_pic = 'image.jpg',location='Mombasa', neighbourhood='Tudor')
     
     def test_instance(self):
         self.assertTrue(isinstance(self.james,Profile))
@@ -22,9 +22,6 @@ class ProfileTest(TestCase):
         self.assertEqual(len(all_profiles),0)
 
 class BusinessTestCase(TestCase):
-    self.new_neighborhood= Post(name = 'market',user = 'James',email = 'james@gmail',neighborhood = 'Nyali',descrption='serenity at its best')
-
-
     def test_save_image(self):
         self.name.save_name()
         name = Business.objects.all()
@@ -43,18 +40,18 @@ class BusinessTestCase(TestCase):
         self.assertTrue(len(all_names) < 1)
 
     def test_get_one_image(self):
-        self.pet.save_image()
-        one_name = Business.get_one_name(self.pet.id)
+        self.house.save_image()
+        one_name = Business.get_one_name(self.house.id)
         self.assertTrue(one_name.name == self.name.name)
 
 class NeighbourhoodTestCase(TestCase):
     def setUp(self):
-        self.new_neighborhood= Post(name ='Tudor',location = 'Mombasa',image = 'image.jpg',description = 'lovely hood',user = james,emergency_contact= '911',occupants_count ='8')
+        self.new_neighborhood= Post(title ='Tudor',location = 'Mombasa',description = 'lovely hood',user = james,emergency_contact= '911',occupants_count ='8')
 
     def test_save_image(self):
         self.image.save_image()
         image = Image.objects.all()
-        self.assertEqual(len(pictures),1)
+        self.assertEqual(len(image),1)
 
     def test_delete_image(self):
         self.image.save_image()
@@ -69,12 +66,12 @@ class NeighbourhoodTestCase(TestCase):
         self.assertTrue(len(all_images) < 1)
 
     def test_get_one_image(self):
-        self.pet.save_image()
-        one_pic = Image.get_one_image(self.pet.id)
+        self.house.save_image()
+        one_pic = Image.get_one_image(self.house.id)
         self.assertTrue(one_pic.name == self.image.name)
 
 class PostTestCase(TestCase):
-    self.new_neighborhood= Post(title = 'hood',User = 'James',text = 'serenity at its best',date_created='June,18,2022')
+   
     def test_save_image(self):
         self.name.save_name()
         name = Business.objects.all()
@@ -93,6 +90,6 @@ class PostTestCase(TestCase):
         self.assertTrue(len(all_names) < 1)
 
     def test_get_one_image(self):
-        self.pet.save_image()
-        one_name = Business.get_one_name(self.pet.id)
+        self.house.save_image()
+        one_name = Business.get_one_name(self.house.id)
         self.assertTrue(one_name.name == self.name.name)                        
