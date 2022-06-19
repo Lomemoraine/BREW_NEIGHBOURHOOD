@@ -25,9 +25,6 @@
 - [License](#license)
 
 
-#### Screenshots
-Home
-[![homepagehood.jpg](https://i.postimg.cc/C1JHH1by/homepagehood.jpg)](https://postimg.cc/mzzHTTdV)
 
 #### Technologies Used
 
