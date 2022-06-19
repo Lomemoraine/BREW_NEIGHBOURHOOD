@@ -1,13 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1 class="text-center" style="font-family: 'Kanit', sans-serif;">Welcome to {{hood.name}}</h1>
+<h1 class="text-center">Welcome to {{hood.name}}    <span></span></h1>
 
 
 <div class="container">
+     <!-- Adding a search form  -->
+     
+     <form class="form-inline text-dark mt-2" method="get" action="{% url 'search' %}">
+        {% csrf_token %}
+        <div class="md-form my-0 text-center">
+            <input class="form-control mr-sm-2 text-white  rounded-pill px-2" type="text" placeholder="Search business" name="name" aria-label="Search" style="border: 1px solid black;">
+        </div>
+    </form><br><br>
     <div class="row">
         <div class=" col-sm-12 col-lg-6 mb-4">
             <img class="" src="{{hood.hood_logo.url}}" alt="Card image cap">
+            <p><b>Health Department Contacts:</b> {{hood.health}}</p>
+            <p><b>Police Authorities Contact:</b> {{hood.police}}</p>
         </div>
         <div class=" col-sm-12 col-lg-6">
             <p><b>Name:</b> {{hood.name}}</p>  
@@ -15,11 +25,14 @@
             <p><b>Occupants:</b> {{hood.occupants_count}}</p>
             <p><b>Description:</b> {{hood.description}}</p>
             <p><b>Emergency Contact:</b> {{hood.emergency_contact}}</p>
-            <a class='btn grey darken' href="}">New business</a>
-            <a class="btn default-color" href=" /businesses/{{hood.id}} ">View Businesses </a><br><br>
+            <hr class="hr-dark">
+            <div class="text-center">
+            <a class='btn grey darken' id="indexBtn" href="{%url 'newbiz'%}">New business</a>
+            <a class="btn default-color" id="indexBtn" href=" /businesses/{{hood.id}} ">View Businesses </a><br><br>
 
-            <a class='btn grey darken' href="{%url 'post'%}">New Post</a>
-            <a class='btn default-color' href="/hoodpost/{{hood.id}}">View Post</a>
+            <a class='btn grey darken' id="indexBtn" href="{%url 'post'%}">New Post</a>
+            <a class='btn default-color' id="indexBtn" href="/hoodupdates/{{hood.id}}">View Post</a>
+        </div>
 
 
         </div>

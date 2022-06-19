@@ -13,7 +13,7 @@
                   <p class="text-secondary">Email: {{ user.email }}</p>
                   <p class="text-muted"> My Bio: {{ user.profile.bio }}</p>
                   <p class="text-muted">Full Name: {{ user.profile.f_name }}<span class="text-muted"> {{ user.profile.l_name }}</span></p>
-                  
+                  <p class="text-muted">Neighborhood: {{ user.profile.neighbourhood }}</p>
                   <p class="text-muted">Phone Number: {{ user.profile.phone }}</p>
                   <button class="btn btn-outline-info border mx-3"><a class="text-decoration-none text-dark" href="{% url 'edit_profile'  user.username%}">Edit Profile</a></button>
                 </div>

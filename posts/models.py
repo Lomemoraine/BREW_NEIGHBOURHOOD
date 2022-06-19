@@ -74,6 +74,8 @@ class Neighbourhood(models.Model):
     description = models.TextField( default = '')
     hood_logo = CloudinaryField('images', default='')
     emergency_contact=models.CharField(max_length=100,null=True, blank=True)
+    health=models.CharField(max_length=100,null=True, blank=True)
+    police=models.CharField(max_length=100,null=True, blank=True)
     occupants_count = models.IntegerField(null  = True ,blank = True)
     
     def __str__(self):
@@ -100,6 +102,10 @@ class Business(models.Model):
 
     def delete_business(self):
         self.delete()
+        
+    @classmethod
+    def search_business(cls, name):
+        return cls.objects.filter(name__icontains=name).all()
         
     @classmethod
     def hood_hustle(cls, id):

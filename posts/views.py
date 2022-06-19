@@ -85,7 +85,7 @@ def editProfile(request,username):
 
 
 
-@login_required(login_url='/accounts/login/')
+@login_required(login_url='login/')
 def hood(request):
     hoods = Neighbourhood.objects.all()
     return render(request, 'neighbourhoods.html', {"hoods": hoods})
@@ -182,3 +182,17 @@ def post(request):
         form = NewPostForm()
     return render(request, 'post.html', {"form": form})
 
+def search_business(request):
+    if request.method == 'GET':
+        name = request.GET.get("name")
+        results = Business.objects.filter(name__icontains=name).all()
+        print(results)
+        message = f'name'
+        params = {
+            'results': results,
+            'message': message
+        }
+        return render(request, 'results.html', params)
+    else:
+        message = "You haven't searched for any business"
+    return render(request, 'results.html', {'message': message})

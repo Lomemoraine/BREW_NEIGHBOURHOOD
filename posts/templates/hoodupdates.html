@@ -3,13 +3,13 @@
 
 <div class="container">
     <br>
-    <h2 class="text-center" style="font-family: 'Kanit', sans-serif;">Updates</h2>
+    <h2 class="text-center">Updates</h2>
     <div class="row">
         {% for post in post %}
         <div class=" col-sm-12 col-lg-4 mb-5">
             <div class="card">
                 <div class="mt-3 ml-3 mr-3">
-                    <img width="120%" height="120%" src="{{post.user.profile.profile_pic.url }}" alt=""
+                    <img width="120%" height="120%" src="{{post.user.profile.prof_pic.url }}" alt=""
                         style="border-radius: 50%; width:30px; height:30px; ">
                   By:  {{post.user.username}}
                     <hr>

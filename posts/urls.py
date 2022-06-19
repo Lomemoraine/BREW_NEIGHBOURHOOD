@@ -18,11 +18,13 @@ urlpatterns = [
   path('edithood/', views.edit_hood, name='edithood'),
   path('businesses/<id>', views.businesses, name='hoodbusiness'),
   path('post', views.post, name='post'),
+  path('newbiz', views.newbiz, name='newbiz'),
   path('edithood/', views.edit_hood, name='edithood'),
   path('hoodupdates/<id>', views.hoodupdates, name='hoodupdates'),
   path('joinhood/<id>', views.joinhood, name='joinhood'),
   path('leavehood/<id>', views.leavehood, name='leavehood'),
   path('singlehood/<id>', views.singlehood, name='singlehood'),
+  path('search/', views.search_business, name='search'),
 
 ]
 

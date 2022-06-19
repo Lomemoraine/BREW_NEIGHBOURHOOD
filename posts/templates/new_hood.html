@@ -6,14 +6,16 @@
 {%block content%}
 <div>
     <div class="container">
-        <h3 class="text-center" style="font-family: 'Kanit', sans-serif;; padding-top:40px;">Add a neighbourhood</h3>
+        <h3 class="text-center" style="font-family: 'Henny Penny', cursive; padding-top:40px;">Add a neighbourhood</h3>
         <div class="col-sm-12 col-lg-6 m-auto card" style="background-color: beige;">
             <form action="{%url 'new_hood'%}" method="post" enctype="multipart/form-data">
                 <br>
                 {%csrf_token%}
 
                 {% bootstrap_form form%}
-                <input type="submit" class="btn default-color btn-lg btn-center" value="Post">
+                <div class="form-group text-center">
+                    <button class="btn btn-outline-info " type="submit">Post</button>
+                </div>
                 <br><br>
             </form>
         </div>

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container" >
+    <br>
+    <div class="row">
+        {% if results %}
+        <h2 class="text-center">Found {{results.count}} businesses</h2>
+        
+            {% for post in results %}
+            <div class=" col-sm-12 col-lg-4 mb-5">
+                <div class="card">
+                   
+                    <div class="card-body">
+                    
+                        <p><b>Business Name:</b> {{post.name}}</p>
+                        <p><b>Description:</b> {{post.description}}</p>
+                        <p><b>Email:</b> {{post.email}}</p>
+                        <p><b>Hood:</b> {{post.neighbourhood}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+       
+        {% else %}
+            <h4>Found 0 businesses with the name you searched </h4>
+        {% endif %}
+    </div>
+</div>
+</div>
+{% endblock %}
