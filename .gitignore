@@ -1,2 +1,8 @@
 virtual/
 posts/migrations/
+
+.env
+__pycache__
+*.pyc
+
+

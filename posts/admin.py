@@ -1,3 +1,18 @@
 from django.contrib import admin
 
-# Register your models here.
+from django.contrib.auth.admin import UserAdmin
+
+from .models import CustomUser,Profile,Neighbourhood, Business,Post
+
+class CustomUserAdmin(UserAdmin):
+    model = CustomUser
+    list_display = ['email', 'username', 'first_name', 'last_name', 'is_staff']
+
+admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(Profile)
+admin.site.register(Neighbourhood)
+admin.site.register(Business)
+admin.site.register(Post)
+
+
+
