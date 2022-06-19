@@ -24,6 +24,11 @@
 - [Known Bugs](#known-bugs)
 - [License](#license)
 
+
+#### Screenshots
+Home
+[![homepagehood.jpg](https://i.postimg.cc/C1JHH1by/homepagehood.jpg)](https://postimg.cc/mzzHTTdV)
+
 #### Technologies Used
 
 - HTML
@@ -93,4 +98,3 @@ However, we are yet to redirect the businesses and posts to the single hood page
 #### License
 
 This project is open source and available under the [MIT License]
-
