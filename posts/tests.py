@@ -17,6 +17,7 @@ class ProfileTest(TestCase):
         self.assertTrue(len(all_profiles),0)
 
     def test_delete_profile(self):
+        self.save_profile()
         self.james.delete_profile()
         all_profiles = Profile.objects.all()
         self.assertEqual(len(all_profiles),0)
