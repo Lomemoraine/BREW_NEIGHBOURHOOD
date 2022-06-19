@@ -28,7 +28,7 @@ Create a .env file and paste paste the following filling where appropriate:
 
 * SECRET_KEY = 'SECRET_KEY'
 * DEBUG=True
-* DB_NAME=''
+* DB_NAME='<your database name>'
 * DB_USER='<your database name>'
 * DB_PASSWORD='<password to your database>'
 * DB_HOST='127.0.0.1'
